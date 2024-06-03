@@ -1,0 +1,11 @@
+Learn Sorting Algorithms:
+--Bubble Sort
+--Insertion Sort
+--Selection Sort
+
+Also, You must know Time Complexity and Space Complexity
+
+DSA
+(1) https://leetcode.com/problems/rotate-array/
+(2) https://leetcode.com/problems/subsets/
+(3) https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/

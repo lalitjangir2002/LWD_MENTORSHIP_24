@@ -1,45 +1,26 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-int MaxSum(vector<int>arr,int i,int j,int k,int &sum)
+int MaxSum(vector<int>arrint k)
 {
-    if(k==0)
+     int lsum=0;
+    int rsum=0;
+    int maxsum=0;
+    for(int i=0;i<k;i++)
     {
-        return sum;
+        lsum=lsum+arr[i];
     }
-    while(k>0)
+    maxsum=lsum;
+    rightindex=arr.size()-1;
+    for(int i=k-1;i>=0;i++)
     {
-    
-    if(arr[i]>arr[j])
-    {
-        
-        while(k>0)
-        {
-            sum=sum+arr[i];
-            i++;
-            k--;
-        }
-        return sum;
+        lsum=lsum-arr[i];
+        rsum=rsum+arr[rightindex];
+        rightindex--;
+        maxsum=max(lsum+rsum,maxsum);
     }
-    else if(arr[i]<arr[j])
-    {
-         while(k>0)
-        {
-            sum=sum+arr[j];
-            j--;
-            k--;
-        }
-        return sum;
-    }
-    else
-    {
-        sum=sum+arr[i];
-        i++;
-        j--;
-        k--;
-        return MaxSum(arr,i,j,k,sum);
-    }
-}
+    return maxsum;
+
 }
 
 int main()
@@ -60,6 +41,6 @@ int main()
     int k;
     cout<<"Enter K : "<<endl;
     cin>>k;
-    cout<<MaxSum(arr,i,j,k,sum);
+    cout<<MaxSum(arr,k);
     return 0;
 }
